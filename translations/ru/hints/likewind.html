@@ -19,12 +19,14 @@
         Всё достаточно просто. Вам необходимо посчитать количество вхождений первого элемента в список.
         Например, используя метод 
         <a href='https://docs.python.org/3/library/array.html?highlight=count#array.array.count'>array.count(x)</a>
-        Он работает следующим образом:<br>
-        elements = ['a', 'a', 'c', 'd', 'e', 'e', 'a', 'b']<br>
+        Он работает следующим образом:
+        <pre class="brush: python">
+        elements = ['a', 'a', 'c', 'd', 'e', 'e', 'a', 'b']
+        elements.count('a')</pre>
         elements.count('a') --> 3<br>
         Или, если нам нужен элемент, находящийся на определенной позиции - можно обращаться по индексу:<br>
-        elements = ['a', 'a', 'c', 'd', 'e', 'e', 'a', 'b']<br>
-        elements.count(elements[0]) --> 3<br>
+        <pre class="brush: python">
+        elements.count(elements[0])</pre>
         Затем нужно сравнить это число с
         <a href='https://docs.python.org/3/library/functions.html?highlight=len#len'>длиной</a>  списка.
         Если эти значения равны - значит список состоит только из одинаковых елементов.
@@ -51,15 +53,17 @@
     </div>
     <div class="answer">
         Теперь вам необходимо сравнить эту информацию с длиной исходного списка (общим количеством элементов).
-        Если мы вернемся к первому примеру:<br>
-        elements = ['a', 'a', 'c', 'd', 'e', 'e', 'a', 'b']<br>
-        elements.count(elements[0]) --> 3<br>
+        Если мы вернемся к первому примеру:
+        <pre class="brush: python">
+        elements = ['a', 'a', 'c', 'd', 'e', 'e', 'a', 'b']
+        elements.count(elements[0])</pre>
         и узнаем, равно ли количество первого элемента общему количеству элементов в списке, то узнаем, состоит ли список из
         всех одинаковых элементов или нет.<br>
         elements.count('a') == len(elements) --> False, так как количество первого элемента = 3, а всего элементов в списке 8.
-        В другой ситуации:<br>
-        elements = ['a', 'a', 'a', 'a']<br>
-        elements.count(elements[0]) --> 4<br>
+        В другой ситуации:
+        <pre class="brush: python">
+        elements = ['a', 'a', 'a', 'a']
+        elements.count(elements[0])</pre>
         elements.count(elements[0]) == len(elements) --> True, так как эти значения (количество первого элемента и количество
         элементов в списке вообще - совпадают)
     </div>
