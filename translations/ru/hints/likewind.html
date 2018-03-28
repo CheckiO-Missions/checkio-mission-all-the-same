@@ -17,8 +17,8 @@
     </div>
     <div class="answer">
         Всё достаточно просто. Вам необходимо посчитать количество вхождений первого элемента в список.
-        Например, используя метод 
-        <a href='https://docs.python.org/3/library/array.html?highlight=count#array.array.count'>array.count(x)</a>
+        Например, используя метод list.count(x). Об этом и других методах для работы с list вы можете прочесть
+        <a href='https://docs.python.org/3/tutorial/datastructures.html'>здесь</a>.
         Он работает следующим образом:
         <pre class="brush: python">
         elements = ['a', 'a', 'c', 'd', 'e', 'e', 'a', 'b']
@@ -79,11 +79,22 @@
         def all_the_same(elements):
             if len(elements) <= 1:
                 return True
-            else:
-                if elements.count(elements[0]) == len(elements):
-                    return True
-                return False
+            if elements.count(elements[0]) == len(elements):
+                return True
+            return False
         </pre>
+        Этот же код можно переписать более элегантным образом:
+        <pre class="brush: python">
+        def all_the_same(elements):
+            if elements == []:
+                return True
+            return elements.count(elements[0]) == len(elements)
+        </pre>
+        Мы вынуждены вынести в отдельное условие проверку пустого списка, так как при обращении к элементу, которого не существует,
+        мы получим ошибку:<br>
+        IndexError: list index out of range<br>
+        А последняя строка возвращает True, если условие истинно и False, если ложно, без необходимости непостредственно
+        прописывать return True и return False
     </div>
 </div>
     
