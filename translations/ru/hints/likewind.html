@@ -24,15 +24,24 @@
         elements = ['a', 'a', 'c', 'd', 'e', 'e', 'a', 'b']
         elements.count('a')</pre>
         elements.count('a') --> 3<br>
-        Или, если нам нужен элемент, находящийся на определенной позиции - можно обращаться по индексу:<br>
-        <pre class="brush: python">
-        elements.count(elements[0])</pre>
         Затем нужно сравнить это число с
         <a href='https://docs.python.org/3/library/functions.html?highlight=len#len'>длиной</a>  списка.
         Если эти значения равны - значит список состоит только из одинаковых елементов.
     </div>
 </div>
 
+<div class="question-answer">
+    <div class="question">
+        А если я знаю только то, что нужный элемент находится на первой позиции?
+    </div>
+    <div class="answer">
+        Если нам нужен элемент, находящийся на определенной позиции - можно обращаться по индексу:<br>
+        <pre class="brush: python">
+        elements.count(elements[0])</pre>
+        Позиция с индексом 0 - первая позиция в списке.
+    </div>
+</div>    
+    
 <div class="question-answer">
     <div class="question">
         Спасибо. А что делать дальше?
@@ -90,11 +99,6 @@
                 return True
             return elements.count(elements[0]) == len(elements)
         </pre>
-        Мы вынуждены вынести в отдельное условие проверку пустого списка, так как при обращении к элементу, которого не существует,
-        мы получим ошибку:<br>
-        IndexError: list index out of range<br>
-        А последняя строка возвращает True, если условие истинно и False, если ложно, без необходимости непостредственно
-        прописывать return True и return False
     </div>
 </div>
     
