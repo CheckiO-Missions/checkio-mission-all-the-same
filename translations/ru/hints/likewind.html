@@ -21,8 +21,8 @@
         <a href='https://docs.python.org/3/tutorial/datastructures.html'>здесь</a>.
         Он работает следующим образом:
         <pre class="brush: python">
-        elements = ['a', 'a', 'c', 'd', 'e', 'e', 'a', 'b']
-        elements.count('a')</pre>
+elements = ['a', 'a', 'c', 'd', 'e', 'e', 'a', 'b']
+elements.count('a')</pre>
         elements.count('a') --> 3<br>
         Затем нужно сравнить это число с
         <a href='https://docs.python.org/3/library/functions.html?highlight=len#len'>длиной</a>  списка.
@@ -37,7 +37,7 @@
     <div class="answer">
         Если нам нужен элемент, находящийся на определенной позиции - можно обращаться по индексу:<br>
         <pre class="brush: python">
-        elements.count(elements[0])</pre>
+elements.count(elements[0])</pre>
         Позиция с индексом 0 - первая позиция в списке.
     </div>
 </div>    
@@ -50,9 +50,9 @@
         Также вам необходимо убедиться, что длина исходного списка больше 1. Так как если список состоит 
         только из 1 или 0 элементов - ваша функция должна возвращать True. Это может выглядеть так:
         <pre class="brush: python">
-        def all_the_same(elements):
-            if len(elements) <= 1:
-                return True</pre>
+def all_the_same(elements):
+    if len(elements) <= 1:
+        return True</pre>
     </div>
 </div>
 
@@ -64,15 +64,15 @@
         Теперь вам необходимо сравнить эту информацию с длиной исходного списка (общим количеством элементов).
         Если мы вернемся к первому примеру:
         <pre class="brush: python">
-        elements = ['a', 'a', 'c', 'd', 'e', 'e', 'a', 'b']
-        elements.count(elements[0])</pre>
+elements = ['a', 'a', 'c', 'd', 'e', 'e', 'a', 'b']
+elements.count(elements[0])</pre>
         и узнаем, равно ли количество первого элемента общему количеству элементов в списке, то узнаем, состоит ли список из
         всех одинаковых элементов или нет.<br>
         elements.count('a') == len(elements) --> False, так как количество первого элемента = 3, а всего элементов в списке 8.
         В другой ситуации:
         <pre class="brush: python">
-        elements = ['a', 'a', 'a', 'a']
-        elements.count(elements[0])</pre>
+elements = ['a', 'a', 'a', 'a']
+elements.count(elements[0])</pre>
         elements.count(elements[0]) == len(elements) --> True, так как эти значения (количество первого элемента и количество
         элементов в списке вообще - совпадают)
     </div>
@@ -85,19 +85,19 @@
     <div class="answer">
         Если сложить всё вместе, мы получим:
         <pre class="brush: python">
-        def all_the_same(elements):
-            if len(elements) <= 1:
-                return True
-            if elements.count(elements[0]) == len(elements):
-                return True
-            return False
+def all_the_same(elements):
+    if len(elements) <= 1:
+        return True
+    if elements.count(elements[0]) == len(elements):
+        return True
+    return False
         </pre>
         Этот же код можно переписать более элегантным образом:
         <pre class="brush: python">
-        def all_the_same(elements):
-            if elements == []:
-                return True
-            return elements.count(elements[0]) == len(elements)
+def all_the_same(elements):
+    if elements == []:
+        return True
+    return elements.count(elements[0]) == len(elements)
         </pre>
     </div>
 </div>
