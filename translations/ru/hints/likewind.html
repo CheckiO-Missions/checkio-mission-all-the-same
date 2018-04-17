@@ -64,16 +64,14 @@ elements.count(elements[0])</pre>
     </div>
 </div>
 
-<div class="question-answer">
+ <div class="question-answer">
     <div class="question">
-        И как мне описать это в коде?
+        Как мне описать это в коде?
     </div>
     <div class="answer">
-        Если сложить всё вместе, мы получим:
+        Ваша функция будет выглядеть так:
         <pre class="brush: python">
 def all_the_same(elements):
-    if len(elements) <= 1:
-        return True
     if elements.count(elements[0]) == len(elements):
         return True
     return False
@@ -81,12 +79,32 @@ def all_the_same(elements):
         Этот же код можно переписать более элегантным образом:
         <pre class="brush: python">
 def all_the_same(elements):
-    if elements == []:
-        return True
     return elements.count(elements[0]) == len(elements)
         </pre>
     </div>
 </div>
+
+<div class="question-answer">
+    <div class="question">
+        Что делать с исходным списком, если в нем нет ни одного элемента?
+    </div>
+    <div class="answer">
+        В этом случае мы тоже считаем, что все элементы одинаковы и ваша функция должна вернуть True.
+    </div>
+</div>    
     
+<div class="question-answer">
+    <div class="question">
+        Как будет выглядеть функция с учетом этого уточнения?
+    </div>
+    <div class="answer">
+        Если сложить всё вместе, мы получим:
+        <pre class="brush: python">
+def all_the_same(elements):
+    if elements == []:
+        return True
+    return elements.count(elements[0]) == len(elements)</pre>
+    </div>
+</div>
     
 </body>
