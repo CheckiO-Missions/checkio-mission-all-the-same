@@ -1,7 +1,7 @@
 <!-- Describe task in general -->
 
 <p>
-    本关你的任务是在给定的{% if interpreter.slug == "js-node" %}数组{% else %}列表{% endif %}中检查是否所有元素全部相等。
+    你本关的任务是检查给定的{% if interpreter.slug == "js-node" %}数组{% else %}列表{% endif %}，判断是否其中所有的元素都相等。
 </p>
 
 <!-- Explain input and output values -->
@@ -17,7 +17,7 @@
 <!-- Put some usage examples -->
 <div class="for_info_only">
     <p>
-        <strong>例如:</strong>
+        <strong>范例:</strong>
     </p>
 
     {% if interpreter.slug == "js-node" %}
@@ -35,17 +35,14 @@ all_the_same([]) == True
 </pre> {% endif %}
 </div>
 <p>
-    <i>本关创意来自
+    <i>
+        本关创意来自
         <a href="https://dbader.org/">Python Tricks series by Dan Bader</a>
     </i>
 </p>
 <!-- Here you can explain how it can be used in development and what is usage of this. -->
 <!-- The section is optional -->
-
-{% if interpreter.slug == "js-node" %}{% else %}
-
 <p>
     <strong>前提:</strong>
     <i>输入的{% if interpreter.slug == "js-node" %}数组{% else %}列表{% endif %}中的所有元素均是可哈希的。</i>
 </p>
-{% endif %}
