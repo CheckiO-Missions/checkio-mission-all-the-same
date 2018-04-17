@@ -41,6 +41,11 @@ TESTS = {
         {
             "input": [10000, 99999],
             "answer": False
+        },
+        {
+            "input": range(2),
+            "answer": False,
+            "explanation": "Testing with a generator."
         }
     ]
 }
