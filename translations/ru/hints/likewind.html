@@ -1,0 +1,110 @@
+<body data-author="likewind">
+
+<div class="question-answer">
+    <div class="question">
+        Я совершенно не представляю, как решить эту задачу.
+    </div>
+    <div class="answer">
+        Вы можете посчитать количество первого элемента и если это число совпадет с общим количеством элементов 
+        (длиной списка), значит все элементы списка действительно одинаковы. Также не забудьте учесть особый случай - пустой
+        список, который, согласно условиям задачи, тоже должен возвращать True.
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        Вы могли бы указать больше подробностей?
+    </div>
+    <div class="answer">
+        Всё достаточно просто. Вам необходимо посчитать количество вхождений первого элемента в список.
+        Например, используя метод list.count(x). Об этом и других методах для работы с list вы можете прочесть в
+        <a href='https://docs.python.org/3/tutorial/datastructures.html#more-on-lists'>официальной документации Python по lists</a>.
+        Он работает следующим образом:
+        <pre class="brush: python">
+elements = ['a', 'a', 'c', 'd', 'e', 'e', 'a', 'b']
+elements.count('a')</pre>
+        elements.count('a') --> 3<br>
+        Затем нужно сравнить это число с длиной списка. В этом вам поможет 
+        <a href='https://docs.python.org/3/library/functions.html#len'>официальная документация по функции len()</a>.
+        Если эти значения равны - значит список состоит только из одинаковых елементов.
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        А если я знаю только то, что нужный элемент находится на первой позиции?
+    </div>
+    <div class="answer">
+        Если нам нужен элемент, находящийся на определенной позиции - можно обращаться по индексу:<br>
+        <pre class="brush: python">
+elements.count(elements[0])</pre>
+        Позиция с индексом 0 - первая позиция в списке.
+    </div>
+</div>    
+    
+<div class="question-answer">
+    <div class="question">
+        Отлично. А что делать с данными о количестве первого элемента?
+    </div>
+    <div class="answer">
+        Теперь вам необходимо сравнить эту информацию с длиной исходного списка (общим количеством элементов).
+        Если мы вернемся к первому примеру:
+        <pre class="brush: python">
+elements = ['a', 'a', 'c', 'd', 'e', 'e', 'a', 'b']
+elements.count(elements[0])</pre>
+        и узнаем, равно ли количество первого элемента общему количеству элементов в списке, то узнаем, состоит ли список из
+        всех одинаковых элементов или нет.<br>
+        elements.count('a') == len(elements) --> False, так как количество первого элемента = 3, а всего элементов в списке 8.
+        В другой ситуации:
+        <pre class="brush: python">
+elements = ['a', 'a', 'a', 'a']
+elements.count(elements[0])</pre>
+        elements.count(elements[0]) == len(elements) --> True, так как эти значения (количество первого элемента и количество
+        элементов в списке вообще - совпадают)
+    </div>
+</div>
+
+ <div class="question-answer">
+    <div class="question">
+        Как мне описать это в коде?
+    </div>
+    <div class="answer">
+        Ваша функция будет выглядеть так:
+        <pre class="brush: python">
+def all_the_same(elements):
+    if elements.count(elements[0]) == len(elements):
+        return True
+    return False
+        </pre>
+        Этот же код можно переписать более элегантным образом:
+        <pre class="brush: python">
+def all_the_same(elements):
+    return elements.count(elements[0]) == len(elements)
+        </pre>
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        Что делать с исходным списком, если в нем нет ни одного элемента?
+    </div>
+    <div class="answer">
+        В этом случае мы тоже считаем, что все элементы одинаковы и ваша функция должна вернуть True.
+    </div>
+</div>    
+    
+<div class="question-answer">
+    <div class="question">
+        Как будет выглядеть функция с учетом этого уточнения?
+    </div>
+    <div class="answer">
+        Если сложить всё вместе, мы получим:
+        <pre class="brush: python">
+def all_the_same(elements):
+    if elements == []:
+        return True
+    return elements.count(elements[0]) == len(elements)</pre>
+    </div>
+</div>
+    
+</body>
