@@ -19,6 +19,14 @@ TESTS = {
             "answer": False
         },
         {
+            "input": [1, 1, 1, 2],
+            "answer": False
+        },
+        {
+            "input": [2, 1, 1, 1],
+            "answer": False
+        },
+        {
             "input": [],
             "answer": True,
             "explanation": "All elements in empty list are equal"
