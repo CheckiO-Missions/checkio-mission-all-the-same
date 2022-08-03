@@ -1,0 +1,23 @@
+{% comment %}New initial code template{% endcomment %}
+{% block env %}from typing import List, Any{% endblock env %}
+
+{% block start %}
+def all_the_same(elements: List[Any]) -> bool:
+    # your code here
+    return True
+{% endblock start %}
+
+{% block example %}
+print('Example:')
+print(all_the_same([1, 1, 1]))
+{% endblock %}
+
+{% block tests %}
+{% for t in tests %}
+assert {% block call %}all_the_same({{t.input|p_args}})
+{% endblock %} == {% block result %}{{t.answer|p}}{% endblock %}{% endfor %}
+{% endblock %}
+
+{% block final %}
+print("The mission is done! Click 'Check Solution' to earn rewards!")
+{% endblock final %}

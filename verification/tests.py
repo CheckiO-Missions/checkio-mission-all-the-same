@@ -11,43 +11,43 @@ Each test is a dict with
 TESTS = {
     "Basics": [
         {
-            "input": [1, 1, 1],
+            "input": [[1, 1, 1]],
             "answer": True
         },
         {
-            "input": [1, 2, 1],
+            "input": [[1, 2, 1]],
             "answer": False
         },
         {
-            "input": [1, 1, 1, 2],
+            "input": [[1, 1, 1, 2]],
             "answer": False
         },
         {
-            "input": [2, 1, 1, 1],
+            "input": [[2, 1, 1, 1]],
             "answer": False
         },
         {
-            "input": [],
+            "input": [[]],
             "answer": True,
             "explanation": "All elements in empty list are equal"
         },
         {
-            "input": [1],
+            "input": [[1]],
             "answer": True,
             "explanation": "List contains only one element."
         }
     ],
     "Extra": [
         {
-            "input": [1, 'a', 1],
+            "input": [[1, 'a', 1]],
             "answer": False
         },
         {
-            "input": [600000],
+            "input": [[600000]],
             "answer": True
         },
         {
-            "input": [10000, 99999],
+            "input": [[10000, 99999]],
             "answer": False
         }
     ]
