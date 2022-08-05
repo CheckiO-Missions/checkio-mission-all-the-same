@@ -18,14 +18,14 @@
     <div class="answer">
         Все досить просто. Потрібно підрахувати кількість входжень першого елемента в списку. Наприклад, за допомогою методу list.count(x).
         Про це та інші методи роботи зі списком ти можеш прочитати в
-        <a href='https://docs.python.org/3/tutorial/datastructures.html#more-on-lists'>official Python documentation on lists</a>.
+        <a href='https://docs.python.org/3/tutorial/datastructures.html#more-on-lists'>документації Python про списки</a>.
         Він працює наступним чином:
         <pre class="brush: python">
 elements = ['a', 'a', 'c', 'd', 'e', 'e', 'a', 'b']
 elements.count('a')</pre>
         elements.count('a') --> 3<br>
         Потім потрібно порівняти це число з довжиною списку. В цьому тобі допоможе ця інформація
-        <a href='https://docs.python.org/3/library/functions.html#len'>official documentation on the len() function</a>.
+        <a href='https://docs.python.org/3/library/functions.html#len'>документації Python про len()</a>.
         Якщо ці значення рівні, то список складається тільки з однакових елементів.
     </div>
 </div>
@@ -59,7 +59,7 @@ elements.count(elements[0])</pre>
         <pre class="brush: python">
 elements = ['a', 'a', 'a', 'a']
 elements.count(elements[0])</pre>
-        elements.count(elements[0]) == len(elements) --> Правда, оскільки ці значення (номер першого елемента і число
+        elements.count(elements[0]) == len(elements) --> True, оскільки ці значення (кількість першого елемента і число
          всіх елементів списку) - збігаються.
     </div>
 </div>
@@ -78,7 +78,7 @@ def all_the_same(elements):
         </pre>
         Той самий код можна переписати більш елегантним способом:
         <pre class="brush: python">
-def all_the_same(elements):
+def all_the_same(elements: List[Any]) -> bool:
     return elements.count(elements[0]) == len(elements)
         </pre>
     </div>
@@ -100,7 +100,7 @@ def all_the_same(elements):
     <div class="answer">
         Якщо зібрати все разом, то отримаємо:
         <pre class="brush: python">
-def all_the_same(elements):
+def all_the_same(elements: List[Any]) -> bool:
     if elements == []:
         return True
     return elements.count(elements[0]) == len(elements)</pre>
