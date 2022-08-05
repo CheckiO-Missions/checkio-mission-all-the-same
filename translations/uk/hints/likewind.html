@@ -71,7 +71,7 @@ elements.count(elements[0])</pre>
     <div class="answer">
         Твоя функція виглядатиме так:
         <pre class="brush: python">
-def all_the_same(elements):
+def all_the_same(elements: List[Any]) -> bool:
     if elements.count(elements[0]) == len(elements):
         return True
     return False
