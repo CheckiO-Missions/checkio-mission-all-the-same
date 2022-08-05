@@ -60,7 +60,7 @@ elements.count(elements[0])</pre>
 elements = ['a', 'a', 'a', 'a']
 elements.count(elements[0])</pre>
         elements.count(elements[0]) == len(elements) --> True, since these values (the number of the first element and the number
-        of all elements in the list - coincide)
+        of all elements in the list) - coincide.
     </div>
 </div>
 
@@ -78,7 +78,7 @@ def all_the_same(elements):
         </pre>
         The same code can be rewritten in a more elegant way:
         <pre class="brush: python">
-def all_the_same(elements):
+def all_the_same(elements: List[Any]) -> bool:
     return elements.count(elements[0]) == len(elements)
         </pre>
     </div>
@@ -100,7 +100,7 @@ def all_the_same(elements):
     <div class="answer">
         If we put everything together, we’ll get:
         <pre class="brush: python">
-def all_the_same(elements):
+def all_the_same(elements: List[Any]) -> bool:
     if elements == []:
         return True
     return elements.count(elements[0]) == len(elements)</pre>
