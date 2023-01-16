@@ -35,7 +35,7 @@ TESTS = {
             "input": [[1]],
             "answer": True,
             "explanation": "List contains only one element."
-        }
+        },
     ],
     "Extra": [
         {
@@ -49,6 +49,6 @@ TESTS = {
         {
             "input": [[10000, 99999]],
             "answer": False
-        }
+        },
     ]
 }

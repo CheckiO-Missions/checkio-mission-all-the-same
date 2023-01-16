@@ -1,110 +1,156 @@
 <body data-author="likewind">
-
 <div class="question-answer">
     <div class="question">
-        I have no idea how to solve this task.
+        <p>
+            I have no idea how to solve this task.
+        </p>
     </div>
     <div class="answer">
-        You can calculate the number of the first element and if the received amount and the total number of elements (the length of the list) 
+        <p>
+            You can calculate the number of the first element and if the received amount and the total number of elements (the length of the list) 
         will add up, then all the elements of the list are really the same. Also don’t forget to take into account a special case - an empty
         list, which according to the conditions of the task must also return True.
+        </p>
     </div>
 </div>
-
 <div class="question-answer">
     <div class="question">
-        Could you specify the details?
+        <p>
+            Could you specify the details?
+        </p>
     </div>
     <div class="answer">
-        Everything is quite simple. You need to calculate the number of occurrences of the first element in the list.
+        <p>
+            Everything is quite simple. You need to calculate the number of occurrences of the first element in the list.
         For example, by using the list.count(x) method. About this and other methods for working with list you can read in the
-        <a href='https://docs.python.org/3/tutorial/datastructures.html#more-on-lists'>official Python documentation on lists</a>.
+        <a target="_blank" href='https://docs.python.org/3/tutorial/datastructures.html#more-on-lists'>official Python documentation on lists</a>.
         It works as follows:
+        </p>
         <pre class="brush: python">
 elements = ['a', 'a', 'c', 'd', 'e', 'e', 'a', 'b']
 elements.count('a')</pre>
-        elements.count('a') --> 3<br>
-        Then you need to compare this number with the length of the list. The 
-        <a href='https://docs.python.org/3/library/functions.html#len'>official documentation on the len() function</a> will help you with that.
+        <div class="output">
+            <p>Output:</p>
+            <pre>
+3
+            </pre>
+        </div>
+        <p>
+            Then you need to compare this number with the length of the list. The 
+        <a target="_blank" href='https://docs.python.org/3/library/functions.html#len'>official documentation on the len() function</a> will help you with that.
         If these values are equal, then the list consists only of the same elements. 
+        </p>
     </div>
 </div>
-
 <div class="question-answer">
     <div class="question">
-        And if I only know that the needed element is in the first position?
+        <p>
+            And if I only know that the needed element is in the first position?
+        </p>
     </div>
     <div class="answer">
-        If we need an element in a certain position - we can address it through an index:<br>
+        <p>
+            If we need an element in a certain position - we can address it through an index:
+        </p>
         <pre class="brush: python">
-elements.count(elements[0])</pre>
-        The position with index 0 - is the first position in the list.
+elements.count(elements[0])
+        </pre>
+        <p>
+            The position with index 0 - is the first position in the list.
+        </p>
     </div>
 </div>    
-    
 <div class="question-answer">
     <div class="question">
-        Excellent. But what should I do about the data on the amount of the first element?
+        <p>
+            Excellent. But what should I do about the data on the amount of the first element?
+        </p>
     </div>
     <div class="answer">
-        Now you need to compare this information with the length of the input list (the total number of elements). 
+        <p>
+            Now you need to compare this information with the length of the input list (the total number of elements). 
        If we go back to the first example:
+        </p>
         <pre class="brush: python">
 elements = ['a', 'a', 'c', 'd', 'e', 'e', 'a', 'b']
-elements.count(elements[0])</pre>
-        and find out whether the number of the first element is equal to the total number of elements in the list, then we’ll know if the list consists of
-        all the same elements or not.<br>
-        elements.count('a') == len(elements) --> False, since the number of the first element is 3, and the total of elements in the list is 8.
+elements.count(elements[0])
+        </pre>
+        <p>
+            and find out whether the number of the first element is equal to the total number of elements in the list, then we’ll know if the list consists of
+        all the same elements or not.
+        </p>
+        <p>
+            elements.count('a') == len(elements) --> False, since the number of the first element is 3, and the total of elements in the list is 8.
         In another situation:
+        </p>
         <pre class="brush: python">
 elements = ['a', 'a', 'a', 'a']
-elements.count(elements[0])</pre>
-        elements.count(elements[0]) == len(elements) --> True, since these values (the number of the first element and the number
+elements.count(elements[0])
+        </pre>
+        <p>
+            elements.count(elements[0]) == len(elements) --> True, since these values (the number of the first element and the number
         of all elements in the list) - coincide.
+        </p>
     </div>
 </div>
-
  <div class="question-answer">
     <div class="question">
-        How do I write this in code?
+        <p>
+            How do I write this in code?
+        </p>
     </div>
     <div class="answer">
-        Your function will look like this:
+        <p>
+            Your function will look like this:
+        </p>
         <pre class="brush: python">
-def all_the_same(elements):
+def all_the_same(elements: list[Any]) -> bool:
+
     if elements.count(elements[0]) == len(elements):
+
         return True
+
     return False
         </pre>
-        The same code can be rewritten in a more elegant way:
+        <p>
+            The same code can be rewritten in a more elegant way:
+        </p>
         <pre class="brush: python">
-def all_the_same(elements: List[Any]) -> bool:
+def all_the_same(elements: list[Any]) -> bool:
+
     return elements.count(elements[0]) == len(elements)
         </pre>
     </div>
 </div>
-
 <div class="question-answer">
     <div class="question">
-        What should I do with the input list if there are no elements in it? 
+        <p>
+            What should I do with the input list if there are no elements in it? 
+        </p>
     </div>
     <div class="answer">
-        In this case, we also assume that all elements are the same and your function should return True. 
+        <p>
+            In this case, we also assume that all elements are the same and your function should return True.
+        </p>
     </div>
 </div>    
-    
 <div class="question-answer">
     <div class="question">
-        What will the function look like taking into account the adjusted information? 
+        <p>
+            What will the function look like taking into account the adjusted information? 
+        </p>
     </div>
     <div class="answer">
-        If we put everything together, we’ll get:
+        <p>
+            If we put everything together, we’ll get:
+        </p>
         <pre class="brush: python">
-def all_the_same(elements: List[Any]) -> bool:
+def all_the_same(elements: list[Any]) -> bool:
+
     if elements == []:
         return True
+
     return elements.count(elements[0]) == len(elements)</pre>
     </div>
 </div>
-    
 </body>
