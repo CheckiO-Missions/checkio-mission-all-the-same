@@ -19,13 +19,14 @@ TESTS = {
             "answer": False
         },
         {
-            "input": [[1, 1, 1, 2]],
+            "input": [[1, 'a', 1]],
             "answer": False
         },
         {
-            "input": [[2, 1, 1, 1]],
+            "input": [[1, 1, 1, 2]],
             "answer": False
         },
+        
         {
             "input": [[]],
             "answer": True,
@@ -39,7 +40,7 @@ TESTS = {
     ],
     "Extra": [
         {
-            "input": [[1, 'a', 1]],
+            "input": [[2, 1, 1, 1]],
             "answer": False
         },
         {
