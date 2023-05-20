@@ -1,23 +1,23 @@
 <!-- Describe task in general -->
 
 <p>
-    In this mission you should check if all elements in the given {% if interpreter.slug == "js-node" %}Array{% else %}list{% endif %} are equal.
+    In this mission you should check if all elements in the given {% if is_js %}<span translate="repeat">array</span>{% else %}<span translate="repeat">list</span>{% endif %} are equal.
 </p>
 
 <!-- Explain input and output values -->
 <p>
-    <strong>Input: </strong> {% if interpreter.slug == "js-node" %}Array{% else %}List{% endif %}.
+    <strong>Input:</strong> {% if is_js %}<span translate="repeat">Array</span>{% else %}<span translate="repeat">List</span>{% endif %}.
 </p>
 
 <p>
-    <strong>Output: </strong> Bool. 
+    <strong>Output:</strong> {% if is_js %}<span translate="repeat">Boolean</span>{% else %}<span translate="repeat">Bool</span>{% endif %}. 
 </p>
 
 
 <!-- Put some usage examples -->
 <div class="for_info_only">
     <p>
-        <strong>Example:</strong>
+        <strong>Examples:</strong>
     </p>
 
 <pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
