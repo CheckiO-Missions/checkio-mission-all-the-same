@@ -1,0 +1,35 @@
+<!-- Describe task in general -->
+
+<p>
+    Dans cette mission, vous devez vérifier si tous les éléments du<span>tableau</span> {% if is_js %}<span></span> <span>(array)</span><span> </span>{% else %} <span>liste</span> <span>(list)</span>{% endif %} sont égaux.
+</p>
+
+<!-- Explain input and output values -->
+<p>
+   <strong>Entrée:</strong> {% if is_js %}<span>Tableau</span> <span>(Array)</span>{% else %}<span>Liste</span> <span>(List)</span>{% endif %}.
+</p>
+
+<p>
+   <strong>Sortie:</strong> {% if is_js %}<span>Booléen</span> <span>(Boolean)</span>{% else %} Bool{% endif %}. 
+</p>
+
+
+<!-- Put some usage examples -->
+<div class="for_info_only">
+    <p>
+        <strong>Exemples:</strong>
+    </p>
+
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
+</div>
+<p><i>L'idée de cette mission a été trouvée sur <a href="https://dbader.org/">Python Tricks series by Dan Bader</a></i></p>
+<!-- Here you can explain how it can be used in development and what is usage of this. -->
+<!-- The section is optional -->
+
+{% if interpreter.slug == "js-node" %}{% else %}
+
+<p>
+    <strong>Condition préalable:</strong>
+    <i>tous les éléments de la liste d'entrée sont hachables</i>
+</p>
+{% endif %}
