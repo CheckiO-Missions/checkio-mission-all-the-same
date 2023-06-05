@@ -1,0 +1,35 @@
+<!-- Describe task in general -->
+
+<p>
+    W tym zadaniu należy sprawdzić, czy wszystkie elementy w danej {% if is_js %}tablicy{% else %}liście{% endif %} są równe.
+</p>
+
+<!-- Explain input and output values -->
+<p>
+    <strong>Wejście:</strong> {% if is_js %}tablica{% else %}lista{% endif %}.
+</p>
+
+<p>
+    <strong>Wyjście:</strong> {% if is_js %}boolean{% else %}bool{% endif %}. 
+</p>
+
+
+<!-- Put some usage examples -->
+<div class="for_info_only">
+    <p>
+        <strong>Przykład:</strong>
+    </p>
+
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
+</div>
+<p><i>Pomysł na misję zaczerpnięty z <a href="https://dbader.org/">Python Tricks series by Dan Bader</a></i></p>
+<!-- Here you can explain how it can be used in development and what is usage of this. -->
+<!-- The section is optional -->
+
+{% if is_js %}{% else %}
+
+<p>
+    <strong>Warunek wstępny:</strong>
+    <i>wszystkie elementy listy wejściowej są haszowalne</i>
+</p>
+{% endif %}
