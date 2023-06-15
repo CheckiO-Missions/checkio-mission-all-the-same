@@ -1,0 +1,158 @@
+<body data-author="likewind">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Nie mam pojęcia jak rozwiązać to zadanie.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Może Pan obliczyć numer pierwszego elementu i jeśli otrzymana kwota i całkowita liczba elementów (długość listy) 
+        będą się sumować, to wszystkie elementy listy są rzeczywiście takie same. Proszę również nie zapomnieć wziąć pod uwagę specjalnego przypadku - pustej listy
+        która zgodnie z warunkami zadania również musi zwrócić True.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Czy mógłby Pan podać szczegóły?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Wszystko jest dość proste. Musi Pan obliczyć liczbę wystąpień pierwszego elementu na liście.
+        Na przykład za pomocą metody list.count(x). O tej i innych metodach pracy z listą mogą Państwo przeczytać w sekcji
+       <a target="_blank" href='https://docs.python.org/3/tutorial/datastructures.html#more-on-lists'>official Python documentation on lists</a>.
+        Działa ona w następujący sposób:
+        </p>
+        <pre class="brush: python">
+elements = ['a', 'a', 'c', 'd', 'e', 'e', 'a', 'b']
+elements.count('a')</pre>
+        <div class="output">
+            <p>Wyjście:</p>
+            <pre>
+3
+            </pre>
+        </div>
+        <p>
+            Następnie należy porównać tę liczbę z długością listy. Funkcja 
+        <a target="_blank" href='https://docs.python.org/3/library/functions.html#len'>official documentation on the len() function</a> pomoże Państwu w tym.
+        Jeśli te wartości są równe, lista składa się tylko z tych samych elementów. 
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            A jeśli wiem tylko, że potrzebny element znajduje się na pierwszej pozycji?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Jeśli potrzebujemy elementu na określonej pozycji - możemy zaadresować go za pomocą indeksu:
+        </p>
+        <pre class="brush: python">
+elements.count(elements[0])
+        </pre>
+        <p>
+            Pozycja z indeksem 0 - jest pierwszą pozycją na liście.
+        </p>
+    </div>
+</div>    
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Doskonale. Ale co mam zrobić z danymi dotyczącymi ilości pierwszego elementu?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Teraz należy porównać tę informację z długością listy wejściowej (całkowitą liczbą elementów). 
+       Proszę wrócić do pierwszego przykładu:
+        </p>
+        <pre class="brush: python">
+elements = ['a', 'a', 'c', 'd', 'e', 'e', 'a', 'b']
+elements.count(elements[0])
+        </pre>
+        <p>
+            i dowiemy się, czy numer pierwszego elementu jest równy całkowitej liczbie elementów na liście, wtedy będziemy wiedzieć, czy lista składa się z
+        wszystkich tych samych elementów, czy nie.
+        </p>
+        <p>
+            elements.count('a') == len(elements) --&gt; Fałsz, ponieważ numer pierwszego elementu wynosi 3, a całkowita liczba elementów na liście wynosi 8.
+        W innej sytuacji:
+        </p>
+        <pre class="brush: python">
+elements = ['a', 'a', 'a', 'a']
+elements.count(elements[0])
+        </pre>
+        <p>
+            elements.count(elements[0]) == len(elements) --&gt; True, ponieważ te wartości (numer pierwszego elementu i liczba wszystkich elementów na liście)
+        wszystkich elementów na liście) - pokrywają się.
+        </p>
+    </div>
+</div>
+ <div class="question-answer">
+    <div class="question">
+        <p>
+            Jak mogę to zapisać w kodzie?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Pana funkcja będzie wyglądać następująco:
+        </p>
+        <pre class="brush: python">
+def all_the_same(elements: list[Any]) -> bool:
+
+    if elements.count(elements[0]) == len(elements):
+
+        return True
+
+    return False
+        </pre>
+        <p>
+            Ten sam kod można przepisać w bardziej elegancki sposób:
+        </p>
+        <pre class="brush: python">
+def all_the_same(elements: list[Any]) -> bool:
+
+    return elements.count(elements[0]) == len(elements)
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Co mam zrobić z listą wejściową, jeśli nie ma na niej żadnych elementów? 
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            W tym przypadku również zakładamy, że wszystkie elementy są takie same, a funkcja powinna zwrócić True.
+        </p>
+    </div>
+</div>    
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Jak będzie wyglądać funkcja uwzględniająca skorygowane informacje? 
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Jeśli połączymy wszystko razem, otrzymamy:
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def all_the_same(elements: list[Any]) -> bool:
+
+    if elements == []:
+        return True
+
+    return elements.count(elements[0]) == len(elements)</pre>
+    </div>
+    </div>
+</div>
+</body>
