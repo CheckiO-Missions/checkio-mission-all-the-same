@@ -1,48 +1,35 @@
 <!-- Describe task in general -->
 
 <p>
-    你本关的任务是检查给定的{% if interpreter.slug == "js-node" %}数组{% else %}列表{% endif %}，判断是否其中所有的元素都相等。
+    在这个任务中，您需要检查给定序列中的所有元素是否相等。
 </p>
 
 <!-- Explain input and output values -->
 <p>
-    <strong>输入: </strong> {% if interpreter.slug == "js-node" %}数组{% else %}列表{% endif %}
+   <strong>输入</strong> {% if is_js %}数组{% else %}列表{% endif %} <span>({% if is_js %}Array{% else %}List{% endif %})</span>.
 </p>
 
 <p>
-    <strong>输出: </strong> 布尔值
+   <strong>输出：</strong>逻辑值 <span>(bool{% if is_js %}ean{% endif %})</span>. 
 </p>
 
 
 <!-- Put some usage examples -->
 <div class="for_info_only">
     <p>
-        <strong>范例:</strong>
+        <strong>示例：</strong>
     </p>
 
-    {% if interpreter.slug == "js-node" %}
-    <pre class="brush: javascript">
-allTheSame([1, 1, 1]) == true
-allTheSame([1, 2, 1]) == false
-allTheSame(['a', 'a', 'a']) == true
-allTheSame([]) == true
-</pre> {% else %}
-    <pre class="brush: python">
-all_the_same([1, 1, 1]) == True
-all_the_same([1, 2, 1]) == False
-all_the_same(['a', 'a', 'a']) == True
-all_the_same([]) == True
-</pre> {% endif %}
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
 </div>
-<p>
-    <i>
-        本关创意来自
-        <a href="https://dbader.org/">Python Tricks series by Dan Bader</a>
-    </i>
-</p>
+<p><i>这个任务的想法是在<a href="https://dbader.org/">Python Tricks series by Dan Bader</a></i></p>
 <!-- Here you can explain how it can be used in development and what is usage of this. -->
 <!-- The section is optional -->
+
+{% if is_js %}{% else %}
+
 <p>
-    <strong>前提:</strong>
-    <i>输入的{% if interpreter.slug == "js-node" %}数组{% else %}列表{% endif %}中的所有元素均是可哈希的。</i>
+    <strong>前提条件：</strong>
+    <i>输入列表中的所有元素都是散列的</i>
 </p>
+{% endif %}
