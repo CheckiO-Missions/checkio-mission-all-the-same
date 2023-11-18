@@ -1,0 +1,35 @@
+<!-- Describe task in general -->
+<img src="{{MEDIA_CONVERT}}title.png" class="title_img" />
+<p>
+    In dieser Aufgabe sollen Sie prüfen, ob alle Elemente in der gegebenen Sequenz gleich sind.
+</p>
+
+<!-- Explain input and output values -->
+<p>
+   <strong>Eingabe:</strong> {% if is_js %}Array{% else %}Liste{% endif %} <span>({% if is_js %}Array{% else %}List{% endif %})</span>.
+</p>
+
+<p>
+   <strong>Ausgabe:</strong> Logischer Wert <span>(bool{% if is_js %}ean{% endif %})</span>. 
+</p>
+
+
+<!-- Put some usage examples -->
+<div class="for_info_only">
+    <p>
+        <strong>Beispiele:</strong>
+    </p>
+
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
+</div>
+<p><i>Die Idee für diese Mission wurde gefunden auf <a href="https://dbader.org/">Python Tricks series by Dan Bader</a></i></p>
+<!-- Here you can explain how it can be used in development and what is usage of this. -->
+<!-- The section is optional -->
+
+{% if is_js %}{% else %}
+
+<p>
+    <strong>Vorbedingung:</strong>
+    <i>alle Elemente der Eingabeliste sind hashfähig</i>
+</p>
+{% endif %}
